@@ -79,5 +79,7 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repo: https://github.com/Courser123/Courser123.github.io.git
+  repo: 
+    github: https://github.com/Courser123/Courser123.github.io.git
+    coding: git@git.dev.tencent.com:dtid_afddcee61af1c961/Courser.git
   branch: master
