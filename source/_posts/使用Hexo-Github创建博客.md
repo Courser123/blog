@@ -4,8 +4,6 @@ date: 2019-05-14 15:23:33
 tags:
 ---
 
-## Hexo
-
 ### 什么是 Hexo？
 
 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](https://daringfireball.net/projects/markdown/)（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
@@ -98,6 +96,8 @@ $ ssh-keygen -t rsa -C "your_email@example.com" # 注意将`your_email`替换成
 
 然后进入 `~/.ssh/id_rsa.pub` 路径下,打开`id_rsa.pub`,将内容复制到剪切板
 
+#### 将本电脑的 SSH 公钥配置到 GitHub 上
+
 登录[GitHub](https://github.com/), 点击Settings –> SSH and GPG keys –> New SSH key,将SSH key添加到GitHub账号中
 
 #### 配置_config.yml(在Hexo生成的根目录下)
@@ -144,3 +144,72 @@ $ hexo deploy
 浏览器输入:[https://用户名.github.io](https://用户名.github.io),打开博客页面,博客创建成功!
 
 由于Hexo使用MarkDown解析,附上链接[MarkDown语法说明](http://wow.kuapp.com/markdown/)
+
+### 同时部署到Coding
+
+由于GitHub服务器在国外,国内访问速度可能会很慢,所以可以将hexo同时部署到Coding上
+
+#### 注册 Coding 帐号
+注册网址：[Coding官网](https://coding.net/)
+
+#### 将本电脑的 SSH 公钥配置到 Coding 上
+
+方法类似上方
+>将本电脑的 SSH 公钥配置到 GitHub 上
+
+#### 测试 SSH 公钥是否添加成功 
+
+本地打开 Git Bash 窗口，输入一下命令：
+```bash
+ssh -T git@coding.net
+```
+这时候会显示是否继续，选择 yes 继续，如果提示下列内容成功，即 SSH 公钥配置成功：
+
+`Hello username You've connected to Coding.net by SSH successfully!`
+
+如果显示如下错误：
+
+`ssh: connect to host coding.net port 22: Connection refused`
+
+说明防火墙完全屏蔽了端口 22 ，这时候不要慌张，直接输入如下命令使用 Coding 提供的 443 端口 SSH 服务即可解决：
+
+```bash
+ssh -T -p 443 git@git-ssh.coding.net
+```
+
+然后在输入验证命令，显示 Coding 帐号与相关信息，即 SSH 公钥配置成功。
+
+#### 新建Coding项目
+
+比较简单,按提示设置即可
+特别注意一点:**为了方便访问,Coding的用户名一定要修改(除非使用默认用户名创建项目!!!),默认用户名是网站生成的乱码,如果不修改,则项目地址会根据默认用户名生成,导致部署成功后博客首页展示乱码而且无法跳转.**
+
+新建项目完毕后，打开项目的 Pages 服务选项，选择部署来源为 master 分支.
+
+#### 配置博客主文件，同时部署 Hexo 博客到 GitHub 和 Coding 上
+
+1.打开_config.yml,找到deploy属性,修改如下:
+```bash
+deploy: 
+  type: git
+  repo: 
+    github: https://github.com/username/username.github.io.git
+    coding: https://git.dev.tencent.com/username/username.git
+  branch: master
+```
+
+2.打开 Hexo 主目录下的 source 文件，新建文件 Staticfile ，这个文件是 Coding 静态文件部署的标志，注意文件名字必须为 Staticfile(只要生成空文件即可)，否则 Coding 上无法完成静态文件的部署
+
+#### 部署
+
+键入如下命令:
+```bash
+hexo clean && hexo g && hexo d
+```
+
+部署成功，到浏览器地址栏分别输入 GitHub 地址 和 Coding 地址，访问成功：
+
+[https://username.github.io/](https://username.github.io/)
+
+[https://username.coding.me/](https://username.coding.me/)
+
