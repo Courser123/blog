@@ -2,6 +2,7 @@
 title: 使用Hexo + Github创建博客
 date: 2019-05-14 15:23:33
 tags:
+categories: 总结
 ---
 
 ### 什么是 Hexo？

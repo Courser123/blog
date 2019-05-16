@@ -2,6 +2,7 @@
 title: LeetCode-Two Sum
 date: 2019-05-14 20:35:17
 tags:
+categories: LeetCode
 ---
 
 ### Two Sum
