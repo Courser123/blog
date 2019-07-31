@@ -1,7 +1,7 @@
 ---
 title: Reverse Integer
-categories: LeetCode(Swift版)
 date: 2019-06-28 15:13:50
+categories: LeetCode(Swift)
 ---
 
 

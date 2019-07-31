@@ -1,8 +1,7 @@
 ---
 title: Two Sum
 date: 2019-05-14 20:35:17
-tags:
-categories: LeetCode(Swift版)
+categories: LeetCode(Swift)
 ---
 
 ### Two Sum
