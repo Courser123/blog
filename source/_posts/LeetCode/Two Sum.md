@@ -17,6 +17,12 @@ categories: LeetCode(Swift版)
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
 
+暴力解法可以使用两个循环嵌套,但是时间复杂度过高
+可以牺牲一定空间,使用查表的方式提升效率
+
+解法一:
+
+两遍遍历
 ```bash
 func twoSum( nums : [Int], target: Int) -> [Int] {
         
@@ -32,6 +38,27 @@ func twoSum( nums : [Int], target: Int) -> [Int] {
                 result.append(dict[target - item]!);
                 break;
             }
+        }
+        
+        return result;
+    }
+```
+
+解法二:
+
+一遍遍历
+```bash
+func twoSum( nums : [Int], target: Int) -> [Int] {
+        
+        var dict = [Int : Int]();
+        var result = [Int]();
+        for (index, item) in nums.enumerated() {
+            if(dict.keys.contains(target - item) && (dict[target - item] != index)) {
+                result.append(index);
+                result.append(dict[target - item]!);
+                break;
+            }
+            dict.updateValue(index, forKey: item);
         }
         
         return result;
