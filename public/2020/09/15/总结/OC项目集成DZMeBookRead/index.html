@@ -96,18 +96,17 @@
 
 
 
-  <meta name="description" content="Drops1.带有transform info的控件,千万不能再使用frame属性,此时的frame属性已经不准了,使用bounds和center进行设置!!! 2.view的布局如果不是整数像素级,可能会导致部分被裁剪,对于小的图片来说,是肉眼可见的">
-<meta name="keywords" content="Drops">
+  <meta name="description" content="导入DZMeBookRead流程1.将DZMeBookRead项目中DZMeBookRead文件夹拖入OC项目 2.将DZMeBookRead项目中Assets.xcassets文件内的图片拖入OC项目 3.创建一个项目名称开头的桥接 “xxx-Bridging-Header.h” 例如: OCDZMeBookRead-Bridging-Header.h 4.找到 Build Settings -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="备忘录">
-<meta property="og:url" content="https://courser123.github.io/2019/06/11/备忘录/备忘录/index.html">
+<meta property="og:title" content="OC项目集成DZMeBookRead">
+<meta property="og:url" content="https://courser123.github.io/2020/09/15/总结/OC项目集成DZMeBookRead/index.html">
 <meta property="og:site_name" content="Courser&#39;s Blog">
-<meta property="og:description" content="Drops1.带有transform info的控件,千万不能再使用frame属性,此时的frame属性已经不准了,使用bounds和center进行设置!!! 2.view的布局如果不是整数像素级,可能会导致部分被裁剪,对于小的图片来说,是肉眼可见的">
+<meta property="og:description" content="导入DZMeBookRead流程1.将DZMeBookRead项目中DZMeBookRead文件夹拖入OC项目 2.将DZMeBookRead项目中Assets.xcassets文件内的图片拖入OC项目 3.创建一个项目名称开头的桥接 “xxx-Bridging-Header.h” 例如: OCDZMeBookRead-Bridging-Header.h 4.找到 Build Settings -">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-28T09:12:40.100Z">
+<meta property="og:updated_time" content="2020-09-15T11:32:19.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="备忘录">
-<meta name="twitter:description" content="Drops1.带有transform info的控件,千万不能再使用frame属性,此时的frame属性已经不准了,使用bounds和center进行设置!!! 2.view的布局如果不是整数像素级,可能会导致部分被裁剪,对于小的图片来说,是肉眼可见的">
+<meta name="twitter:title" content="OC项目集成DZMeBookRead">
+<meta name="twitter:description" content="导入DZMeBookRead流程1.将DZMeBookRead项目中DZMeBookRead文件夹拖入OC项目 2.将DZMeBookRead项目中Assets.xcassets文件内的图片拖入OC项目 3.创建一个项目名称开头的桥接 “xxx-Bridging-Header.h” 例如: OCDZMeBookRead-Bridging-Header.h 4.找到 Build Settings -">
 
 
 
@@ -115,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="https://courser123.github.io/2019/06/11/备忘录/备忘录/">
+  <link rel="canonical" href="https://courser123.github.io/2020/09/15/总结/OC项目集成DZMeBookRead/">
 
 
 
@@ -125,7 +124,7 @@
   };
 </script>
 
-  <title>备忘录 | Courser's Blog</title>
+  <title>OC项目集成DZMeBookRead | Courser's Blog</title>
   
 
 
@@ -290,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2019/06/11/备忘录/备忘录/">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2020/09/15/总结/OC项目集成DZMeBookRead/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Courser">
@@ -307,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">备忘录
+          <h1 class="post-title" itemprop="name headline">OC项目集成DZMeBookRead
 
               
             
@@ -333,24 +332,12 @@
                 
               
 
-              <time title="Created: 2019-06-11 20:55:51" itemprop="dateCreated datePublished" datetime="2019-06-11T20:55:51+08:00">2019-06-11</time>
+              <time title="Created: 2020-09-15 19:28:48 / Modified: 19:32:19" itemprop="dateCreated datePublished" datetime="2020-09-15T19:28:48+08:00">2020-09-15</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-28 17:12:40" itemprop="dateModified" datetime="2019-06-28T17:12:40+08:00">2019-06-28</time>
               
             
           </span>
@@ -367,7 +354,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/备忘录/" itemprop="url" rel="index"><span itemprop="name">备忘录</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
 
                 
                 
@@ -402,9 +389,36 @@
       
 
       
-        <h3 id="Drops"><a href="#Drops" class="headerlink" title="Drops"></a>Drops</h3><p>1.带有transform info的控件,千万不能再使用frame属性,此时的frame属性已经不准了,使用bounds和center进行设置!!!</p>
-<p>2.view的布局如果不是整数像素级,可能会导致部分被裁剪,对于小的图片来说,是肉眼可见的</p>
+        <h2 id="导入DZMeBookRead流程"><a href="#导入DZMeBookRead流程" class="headerlink" title="导入DZMeBookRead流程"></a>导入DZMeBookRead流程</h2><p>1.将DZMeBookRead项目中DZMeBookRead文件夹拖入OC项目</p>
+<p>2.将DZMeBookRead项目中Assets.xcassets文件内的图片拖入OC项目</p>
+<p>3.创建一个项目名称开头的桥接 “xxx-Bridging-Header.h” 例如: OCDZMeBookRead-Bridging-Header.h</p>
+<p>4.找到 Build Settings -&gt; Swift Compiler General -&gt; Objective-C Briging Header 加入桥接文件路径</p>
+<p>5.找到 Build Settings -&gt; Swift Compiler Language -&gt; 设置Swift语言版本（这里就是你使用的DZMeBookRead是Swift什么版本的）</p>
+<p>6.在info.plist中加入 View controller-based status bar appearance 设置为 NO （允许调整状态栏）</p>
+<p>7.在 “xxx-Bridging-Header.h” 中导入 “DZMeBookRead-Bridging-Pch.h”(如果存在的话) </p>
+<p>8.混编头文件 #import “OCDZMeBookRead(你的项目名称)-Swift.h” 头文件导入</p>
+<p>9.command + shift + R  运行项目测试</p>
+<p>10.注意：想要在OC中使用Swift的方法或者属性 需要在方法或者属性名前面添加 @objc</p>
+<pre><code>例如：
 
+DZMReadParser中的方法
+
+class func ParserLocalURL(url:URL,complete:((_ readModel:DZMReadModel) -&gt;Void)?)
+
+你想要在OC中进行使用 需要在最前面添加 @objc
+
+@objc class func ParserLocalURL(url:URL,complete:((_ readModel:DZMReadModel) -&gt;Void)?)
+
+再 command + shift + R
+
+可以调用了 属性也是一样
+
+例如: @objc var readModel:DZMReadModel!
+
+原本的DZMeBookRead是Swift代码 如果需要进混编且需要用到参数或者方法 需要自己进去源代码中加入 @objc 在进行使用
+
+作者已经为部分可能使用的到的方法或属性添加了 @objc ！！！
+</code></pre>
       
     </div>
 
@@ -425,12 +439,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Drops/" rel="tag"># Drops</a>
-          
-        </div>
-      
 
       
       
@@ -440,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/14/LeetCode/Two Sum/" rel="next" title="Two Sum">
-                <i class="fa fa-chevron-left"></i> Two Sum
+              <a href="/2020/08/31/Runtime/runtime机制(1)-基本数据结构/" rel="next" title="runtime机制(1)-基本数据结构">
+                <i class="fa fa-chevron-left"></i> runtime机制(1)-基本数据结构
               </a>
             
           </div>
@@ -450,8 +458,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/28/Swift Summary/Swift基本语法/" rel="prev" title="Swift基本语法">
-                Swift基本语法 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/04/28/TechnicalSupport/Langya_novel_technical_support/" rel="prev" title="琅琊小说">
+                琅琊小说 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Drops"><span class="nav-number">1.</span> <span class="nav-text">Drops</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#导入DZMeBookRead流程"><span class="nav-number">1.</span> <span class="nav-text">导入DZMeBookRead流程</span></a></li></ol></div>
             
 
           </div>
