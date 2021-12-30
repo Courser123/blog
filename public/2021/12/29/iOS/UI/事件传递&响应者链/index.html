@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"courser123.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="事件传递过程  触摸事件发生后, UIApplication 会触发 func sendEvent(_ event: UIEvent) 将封装好的 UIEvent 传给 UIWindow(当前展示的UIWindow), 通常接下来传给 UIViewController 然后传给 UIViewController 的根视图, 然后👇🏻 命中测试(hitTest)  ① 检查自身是否可以接收事件,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件传递&amp;响应者链">
+<meta property="og:url" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/index.html">
+<meta property="og:site_name" content="Courser&#39;s Blog">
+<meta property="og:description" content="事件传递过程  触摸事件发生后, UIApplication 会触发 func sendEvent(_ event: UIEvent) 将封装好的 UIEvent 传给 UIWindow(当前展示的UIWindow), 通常接下来传给 UIViewController 然后传给 UIViewController 的根视图, 然后👇🏻 命中测试(hitTest)  ① 检查自身是否可以接收事件,">
+<meta property="og:locale">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/C708B73F-4B04-44E8-B655-F3EF81A9749C.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/2031C1E0-CD22-4887-974F-816D5575DF78.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/B0ABE2DF-0087-492F-9A07-7E2BD9CD5B0E.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/31B1BB9C-89E7-4E9E-AE05-EA7690765197.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/15F294D4-4F56-46B9-96A0-1B0436EDEB94.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/290E2C72-06E8-4C29-9323-75DA862B6772.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/5C23F3FB-57F1-42A3-A295-97359D12123E.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/F7D740CA-617A-4BFE-A9D7-D07E0B2D1E7B.png">
+<meta property="og:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/58D35CDC-3D1A-4379-9B77-0DE377CD89DF.png">
+<meta property="article:published_time" content="2021-12-29T11:06:55.000Z">
+<meta property="article:modified_time" content="2021-12-29T12:34:47.651Z">
+<meta property="article:author" content="Courser">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/C708B73F-4B04-44E8-B655-F3EF81A9749C.png">
+
+<link rel="canonical" href="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'default'
+  };
+</script>
+
+  <title>事件传递&响应者链 | Courser's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Courser's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          事件传递&响应者链
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-29 19:06:55 / Modified: 20:34:47" itemprop="dateCreated datePublished" datetime="2021-12-29T19:06:55+08:00">2021-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="事件传递过程"><a href="#事件传递过程" class="headerlink" title="事件传递过程"></a>事件传递过程</h3><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/C708B73F-4B04-44E8-B655-F3EF81A9749C.png" class="" title="This is an image">
+
+<p>触摸事件发生后, UIApplication 会触发 func sendEvent(_ event: UIEvent) 将封装好的 UIEvent 传给 UIWindow(当前展示的UIWindow), 通常接下来传给 UIViewController 然后传给 UIViewController 的根视图, 然后👇🏻</p>
+<h4 id="命中测试-hitTest"><a href="#命中测试-hitTest" class="headerlink" title="命中测试(hitTest)"></a>命中测试(hitTest)</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/2031C1E0-CD22-4887-974F-816D5575DF78.png" class="" title="This is an image">
+
+<p>① 检查自身是否可以接收事件, 以下三种情况无法接收事件:</p>
+<ul>
+<li>view.isUserInteractionEnabled = false</li>
+<li>view.alpha &lt;= 0.01</li>
+<li>view.isHidden = true</li>
+</ul>
+<p>② 检查坐标是否在自身内部, 使用 func point(inside point: CGPoint, wizzth event: UIEvent?) -&gt; Bool 方法判断, 该方法可以被重写</p>
+<p>③ 从后往前遍历子视图重复执行命中测试, 保证后添加的视图先遍历, 即使视图有重叠, 该视图也是同级中展示最完整的, 即用户最可能想点击的视图</p>
+<h4 id="确定第一响应者"><a href="#确定第一响应者" class="headerlink" title="确定第一响应者"></a>确定第一响应者</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/B0ABE2DF-0087-492F-9A07-7E2BD9CD5B0E.png" class="" title="This is an image">
+
+<p>整个命中测试的走向是这样的：A✅ –&gt; D❎ –&gt; B✅ –&gt; C❎ &gt;&gt;&gt;&gt; B</p>
+<p>实际上这个流程就是 UIView 的一个方法：func hitTest(_ point: CGPoint, with event: UIEvent?) -&gt; UIView?，方法最后返回的 UIView? 即第一响应者</p>
+<h4 id="越界"><a href="#越界" class="headerlink" title="越界!"></a>越界!</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/31B1BB9C-89E7-4E9E-AE05-EA7690765197.png" class="" title="This is an image">
+
+<p>如图, 最终获得第一响应者仍然是 B，甚至整个命中测试的走向和之前是一样的：A✅ –&gt; D❎ –&gt; B✅ –&gt; C❎ &gt;&gt;&gt;&gt; B，究其原因是在 D 检查触摸点是否在自身内部时，答案是否，所以不会去对 E 进行命中测试，即使看起来我们点了 E。这个例子告诉我们，要注意可点击的子视图是否会超出父视图的范围。另若有这种情况可以重写 func point(inside point: CGPoint, with event: UIEvent?) -&gt; Bool 方法来扩大点击有效范围。</p>
+<h3 id="响应链传递"><a href="#响应链传递" class="headerlink" title="响应链传递"></a>响应链传递</h3><h4 id="确定响应链成员"><a href="#确定响应链成员" class="headerlink" title="确定响应链成员"></a>确定响应链成员</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/15F294D4-4F56-46B9-96A0-1B0436EDEB94.png" class="" title="This is an image">
+
+<p>在找到了第一响应者之后，整个响应链也随着确定下来了。所谓响应链是由响应者组成的一个链表，链表的头是第一响应者，链表的每个结点的下一个结点都是该结点的 next 属性。</p>
+<p>默认来说，若该结点是 UIView 类型的话，这个 next 属性是该结点的父视图。但也有几个例外：</p>
+<ul>
+<li><p>如果是 UIViewController 的根视图，则下一个响应者是 UIViewController。</p>
+</li>
+<li><p>如果是 UIViewController</p>
+<ul>
+<li>如果 UIViewController 的视图是 UIWindow 的根视图，则下一个响应者是 UIWindow 对象。</li>
+<li>如果 UIViewController 是由另一个 UIViewController 呈现的，则下一个响应者是第二个 UIViewController。</li>
+</ul>
+</li>
+<li><p>UIWindow的下一个响应者是 UIApplication</p>
+</li>
+<li><p>UIApplication 的下一个响应者是 app delegate。但仅当该 app delegate 是 UIResponder 的实例且不是 UIView、UIViewController 或 app 对象本身时，才是下一个响应者。</p>
+</li>
+</ul>
+<h4 id="沿响应链传递事件"><a href="#沿响应链传递事件" class="headerlink" title="沿响应链传递事件"></a>沿响应链传递事件</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/290E2C72-06E8-4C29-9323-75DA862B6772.png" class="" title="This is an image">
+
+<p>触摸事件首先将会由第一响应者响应，触发其 open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) 等方法，根据触摸的方式不同（如拖动，双指），具体的方法和过程也不一样。若第一响应者在这个方法中不处理这个事件，则会传递给响应链中的下一个响应者触发该方法处理，若下一个也不处理，则以此类推传递下去。若到最后还没有人响应，则会被丢弃（比如一个误触） </p>
+<h4 id="阻断响应链传递"><a href="#阻断响应链传递" class="headerlink" title="阻断响应链传递"></a>阻断响应链传递</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/5C23F3FB-57F1-42A3-A295-97359D12123E.png" class="" title="This is an image">
+
+<p>如果我们把上图中的 C 换成平时使用的 UIControl 类，控制台又会怎么打印呢？</p>
+<p>如图所示，会发现响应链的事件传递到 C 处就停止了，也就是 A 的 touches 方法没有被触发。这意味着在响应链中，UIControl 及其子类默认来说，是不会将事件传递下去的。在代码中，可以理解为 UIView 默认会在其 touches 方法中去调用其 next 的 touches 方法，而 UIControl 默认不会去调用。这样就做到了，当某个控件接受了事件之后，事件的传递就会终止。另外，UIScrollView 也是这样的工作机制。</p>
+<h3 id="响应链及手势识别"><a href="#响应链及手势识别" class="headerlink" title="响应链及手势识别"></a>响应链及手势识别</h3><h4 id="当手势识别参与响应链"><a href="#当手势识别参与响应链" class="headerlink" title="当手势识别参与响应链"></a>当手势识别参与响应链</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/F7D740CA-617A-4BFE-A9D7-D07E0B2D1E7B.png" class="" title="This is an image">
+
+<img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/58D35CDC-3D1A-4379-9B77-0DE377CD89DF.png" class="" title="This is an image">
+
+<p>从图中我们可以看到，当不带手势的情况下，手指按下去的时候，响应者的 touchBegan 方法会触发，随着手指的移动，touchMoved 会不断触发，当手指结束移动并抬起来的时候，touchEnded 会触发。在这个过程中，我们接收到一直是一个不断更新的 UITouch。</p>
+<p>在该视图有添加一个 UIPanGestureRecognizer 手势的情况下，我们多了下方这一条来表示与响应链同时工作的手势识别系统，可以看到手势识别系统也是在手指按下去那一刻就开始工作的，前半段处于一直正在识别的状态。在我们拖动了很小一段距离之后（注意这时候我们的手指还没抬起）， 手势识别系统确定了该 UITouch 所做的动作是符合 UIPanGestureRecognizer 的特点的，于是给该视图的响应链发送了 touchCancelled 的信息，从而阻止这个 UITouch 继续触发这个视图的 touches 系列方法（同时也取消了别的相关手势的 touches 系列方法，图中未体现）。在这之后，被调用的只有与手势关联的 target-action 方法（也就是图中的墨绿色节点 call PanFunction）。</p>
+<p><em><strong>再进一步理解</strong></em><br>为了图片的美观和易读，在图片中隐去了不少细节，在此列出：</p>
+<ul>
+<li><p>手势识别器的状态在图中未标出：</p>
+<ul>
+<li>手势在图中 recognizing 的橙色节点处和 recognized 棕色节点处都处于 .possible 状态</li>
+<li>手势在图中绿色节点处的状态变化是 .began -&gt; [.changed] -&gt; ended</li>
+</ul>
+</li>
+<li><p>手势识别器不是响应者，但也有 touches 系列方法，比它所添加的视图的 touches 方法更早那么一点触发</p>
+<ul>
+<li>从图中也可以看出，手势那条线上的每个节点都稍靠左一些</li>
+<li>手势那条线上的橙、棕、墨绿色节点处也可以看做手势识别器的 touches 方法触发</li>
+</ul>
+</li>
+<li><p>更详细的触发顺序应当如下图所示（在一个 UIView 上添加了 UIPanGestureRecognizer ，并单指在上面滑动一段距离的情况）</p>
+</li>
+</ul>
+<p>(手势和响应者的 touches 方法名字是一样的，都是「began」，「moved」，「ended」，「cancelled」。很容易和手势识别器的 state 属性搞混，state 属性是根据每个手势的类型（离散型/连续型）的不同，可能有 .possible、.began、.changed、.ended、.cancelled、.failed 这些状态，名字很像方法名很像但不是一回事。)</p>
+<h4 id="UIControl-与手势识别"><a href="#UIControl-与手势识别" class="headerlink" title="UIControl 与手势识别"></a>UIControl 与手势识别</h4><p>由于 UIControl 接收 target-action 方法的方式是在其 touches 方法中识别、接收、处理，而手势的 touches 方法一定比其所在视图的 touches 方法早触发。可以得到的结论是：对于自定义的 UIControl 来说，手势识别的优先级比 UIControl 自身处理事件的优先级高。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总的来说，触摸屏幕后事件的传递可以分为以下几个步骤：</p>
+<ol>
+<li><p>通过「命中测试」来找到「第一响应者」</p>
+</li>
+<li><p>由「第一响应者」来确定「响应链」</p>
+</li>
+<li><p>将事件沿「响应链」传递</p>
+</li>
+<li><p>事件被某个响应者接收，或没有响应者接收从而被丢弃</p>
+</li>
+</ol>
+<p>在步骤 3 中，事件沿「响应链」传递这个过程，就是响应者通过调用其 next 的 touches 系列方法来实现的。在上篇文章中我们也提到，假如我们使用 UIControl 等类作为响应者，这些类本身就不会调用其 next 的 touches 系列方法，从而实现阻断响应链的效果，也可以认为是实现接受某个事件的效果。</p>
+<p>手势识别器(UIGestureRecognizer)在大多数情况下，识别屏幕触摸事件的优先级，比控件本身的方法的优先级高。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/29/iOS/UI/UITableView/" rel="prev" title="UITableView">
+      <i class="fa fa-chevron-left"></i> UITableView
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/" rel="next" title="图像显示原理">
+      图像显示原理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">事件传递过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%B8%AD%E6%B5%8B%E8%AF%95-hitTest"><span class="nav-number">1.1.</span> <span class="nav-text">命中测试(hitTest)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E7%AC%AC%E4%B8%80%E5%93%8D%E5%BA%94%E8%80%85"><span class="nav-number">1.2.</span> <span class="nav-text">确定第一响应者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B6%8A%E7%95%8C"><span class="nav-number">1.3.</span> <span class="nav-text">越界!</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E9%93%BE%E4%BC%A0%E9%80%92"><span class="nav-number">2.</span> <span class="nav-text">响应链传递</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%93%8D%E5%BA%94%E9%93%BE%E6%88%90%E5%91%98"><span class="nav-number">2.1.</span> <span class="nav-text">确定响应链成员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B2%BF%E5%93%8D%E5%BA%94%E9%93%BE%E4%BC%A0%E9%80%92%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">沿响应链传递事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%BB%E6%96%AD%E5%93%8D%E5%BA%94%E9%93%BE%E4%BC%A0%E9%80%92"><span class="nav-number">2.3.</span> <span class="nav-text">阻断响应链传递</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E9%93%BE%E5%8F%8A%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">响应链及手势识别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB%E5%8F%82%E4%B8%8E%E5%93%8D%E5%BA%94%E9%93%BE"><span class="nav-number">3.1.</span> <span class="nav-text">当手势识别参与响应链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIControl-%E4%B8%8E%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">UIControl 与手势识别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Courser</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Courser</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

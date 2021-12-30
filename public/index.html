@@ -1,122 +1,43 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang>
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"courser123.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Courser&#39;s Blog">
 <meta property="og:url" content="https://courser123.github.io/index.html">
 <meta property="og:site_name" content="Courser&#39;s Blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Courser">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Courser&#39;s Blog">
+
+<link rel="canonical" href="https://courser123.github.io/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="https://courser123.github.io/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'default'
   };
 </script>
 
@@ -128,15 +49,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -145,9 +59,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -161,99 +74,53 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Courser's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Courser's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -261,123 +128,799 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content index posts-expand">
             
-  <section id="posts" class="posts-expand">
-    
       
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/30/iOS/UI/CALayer%E5%92%8CUIView/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/30/iOS/UI/CALayer%E5%92%8CUIView/" class="post-title-link" itemprop="url">CALayer和UIView</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-30 15:01:36 / Modified: 15:03:49" itemprop="dateCreated datePublished" datetime="2021-12-30T15:01:36+08:00">2021-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/30/iOS/UI/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86&%E5%BC%82%E6%AD%A5%E7%BB%98%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/30/iOS/UI/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86&%E5%BC%82%E6%AD%A5%E7%BB%98%E5%88%B6/" class="post-title-link" itemprop="url">绘制原理&异步绘制</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-30 11:35:05 / Modified: 11:41:53" itemprop="dateCreated datePublished" datetime="2021-12-30T11:35:05+08:00">2021-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="绘制原理"><a href="#绘制原理" class="headerlink" title="绘制原理"></a>绘制原理</h3><img src="/2021/12/30/iOS/UI/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86&%E5%BC%82%E6%AD%A5%E7%BB%98%E5%88%B6/83461381-8CD7-4189-9A3A-2DF193366ED8.png" class="" title="This is an image">
+
+<p>① 当我们调用[UIView setNeedsDisplay]方法时，并没有执行立即执行绘制工作。</p>
+<p>② 而是马上调用[view.layer setNeedsDisplay]方法，给当前layer打上脏标记, 表明需要绘制了。</p>
+<p>③ 在当前RunLoop快要结束的时候调用 layer 的display方法，来进入到当前视图的真正绘制当中。</p>
+<p>④ 在layer的display方法内部，系统会判断layer的layer.delegate(默认是对应的UIView, layer上的子layer默认delegate为nil)是否实现了displayLayer:方法<br>    a.如果没有实现，则执行系统的绘制流程;<br>    b.如果实现了则会进入异步绘制的入口。</p>
+<p>⑤ 最后把绘制完的backing store（可以理解为位图）提交给GPU,也就是将生成的 backing store 赋值给 layer.content 属性。</p>
+<h3 id="系统绘制流程"><a href="#系统绘制流程" class="headerlink" title="系统绘制流程"></a>系统绘制流程</h3><img src="/2021/12/30/iOS/UI/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86&%E5%BC%82%E6%AD%A5%E7%BB%98%E5%88%B6/5699FB70-08A6-4FB0-B538-7EB652550AEE.png" class="" title="This is an image">
+
+<p>① 在layer内部会创建一个backing store，我们可以理解为CGContextRef上下文。</p>
+<p>② 判断layer是否有delegate:<br>    2.1 如果有delegate，则会执行[layer.delegate drawLayer:inContext]（这个方法的执行是在系统内部执行的），然后在这个方法中会调用view的drawRect:方法，也就是我们重写view的drawRect:方法才会被调用到。<br>    2.2 如果没有delegate，会调用layer的drawInContext方法，也就是我们可以重写的layer的该方法，此刻会被调用到。</p>
+<p>③ 最后都由CALayer把绘制完的backing store（可以理解为位图）提交给GPU。</p>
+<h3 id="异步绘制"><a href="#异步绘制" class="headerlink" title="异步绘制"></a>异步绘制</h3><img src="/2021/12/30/iOS/UI/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86&%E5%BC%82%E6%AD%A5%E7%BB%98%E5%88%B6/81D1F9B2-DF19-4C4D-8A0B-5CDC9C172B63.png" class="" title="This is an image">
+
+<p>当view调用setNeedsDisplay的时候，CALayer会调用display，如果代理实现了displayLayer：方法的话，就可以在子线程中去进行位图(bitmap)的绘制，完成后返回主线程把位图赋值给layer的contents属性，完成异步绘制。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/30/iOS/UI/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/30/iOS/UI/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" class="post-title-link" itemprop="url">离屏渲染</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-30 11:22:44 / Modified: 11:33:11" itemprop="dateCreated datePublished" datetime="2021-12-30T11:22:44+08:00">2021-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="离屏渲染定义"><a href="#离屏渲染定义" class="headerlink" title="离屏渲染定义"></a>离屏渲染定义</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>如果要在显示屏上显示内容，我们至少需要一块与屏幕像素数据量一样大的frame buffer，作为像素数据存储区域，而这也是GPU存储渲染结果的地方。如果有时因为一些限制，无法把渲染结果直接写入frame buffer，而是先暂存在另外的内存区域，之后再写入frame buffer，那么这个过程被称之为离屏渲染。也就是GPU需要在当前屏幕缓冲区以外新开辟一个缓冲区进行渲染操作</p>
+<img src="/2021/12/30/iOS/UI/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/36CDDAF7-96FA-4CF0-B1B5-33F52DC3A6CB.png" class="" title="This is an image">
+
+<center>渲染结果先经过了离屏buffer，再到frame buffer</center>
+
+<h4 id="CPU”离屏渲染”"><a href="#CPU”离屏渲染”" class="headerlink" title="CPU”离屏渲染”"></a>CPU”离屏渲染”</h4><p>大家知道，如果我们在UIView中实现了drawRect方法，就算它的函数体内部实际没有代码，系统也会为这个view申请一块内存区域，等待CoreGraphics可能的绘画操作。</p>
+<p>对于类似这种“新开一块CGContext来画图“的操作，有很多文章和视频也称之为“离屏渲染”（因为像素数据是暂时存入了CGContext，而不是直接到了frame buffer）。进一步来说，其实所有CPU进行的光栅化操作（如文字渲染、图片解码），都无法直接绘制到由GPU掌管的frame buffer，只能暂时先放在另一块内存之中，说起来都属于“离屏渲染”。</p>
+<p>自然我们会认为，因为CPU不擅长做这件事，所以我们需要尽量避免它，就误以为这就是需要避免离屏渲染的原因。但是根据苹果工程师的说法，CPU渲染并非真正意义上的离屏渲染。另一个证据是，如果你的view实现了drawRect，此时打开Xcode调试的“Color offscreen rendered yellow”开关，你会发现这片区域不会被标记为黄色，说明Xcode并不认为这属于离屏渲染。</p>
+<p>其实通过CPU渲染就是俗称的“软件渲染”，而真正的离屏渲染发生在GPU。</p>
+<h4 id="GPU离屏渲染"><a href="#GPU离屏渲染" class="headerlink" title="GPU离屏渲染"></a>GPU离屏渲染</h4><img src="/2021/12/30/iOS/UI/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/C56D43C0-AC42-47B4-922A-ED79C2C5D673.png" class="" title="This is an image">
+
+<center>”画家算法“，把每一层依次输出到画布</center>
+
+<p><strong>圆角触发离屏渲染的真正原因</strong></p>
+<p>图层的叠加绘制大概遵循“画家算法”。</p>
+<p>油画算法：先绘制场景中的离观察者较远的物体，再绘制较近的物体。如图:先绘制山，再绘制草地，最后再绘制树，即可解决隐藏面消除的问题。即将场景按照物理距离和观察者的距离远近排序，由远及近的绘制即可。</p>
+<p>本来我们从后往前绘制，绘制完一个图层就可以丢弃了。但现在需要依次在 Offscreen Buffer中保存，等待圆角+裁剪处理，即引发了 离屏渲染 。</p>
+<p>背景色、边框、背景色+边框，再加上圆角+裁剪，根据文档说明，因为 contents = nil 没有需要裁剪处理的内容，所以masksToBounds设置为YES或者NO都没有影响。</p>
+<p>一旦我们 为contents设置了内容 ，无论是图片、绘制内容、有图像信息的子视图等，再加上圆角+裁剪，就会触发离屏渲染。</p>
+<p>不一定是直接为contents赋值！</p>
+<p><strong>iOS9及以后的优化</strong></p>
+<p>关于圆角，iOS 9及之后的系统版本，苹果进行了一些优化。</p>
+<p>layer.contents/imageView.image<br>我们只设置contents或者UIImageView的image，并加上圆角+裁剪，是不会产生离屏渲染的。但如果加上了背景色、边框或其他有图像内容的图层，还是会产生离屏渲染。</p>
+<p>其实这也是可以理解的，因为只有 单层 内容需要添加圆角和裁切，所以可以不需要用到离屏渲染技术。但如果加上了背景色、边框或其他有图像内容的图层，就会产生为 多层 添加圆角和裁切，所以还是会触发离屏渲染</p>
+<p>Tips: 所以，我们在使用类似于UIButton的视图的时候需要注意：<br>我们为UIButton设置一个图片，其实会添加一个UIImageView。<br>为UIButton添加圆角和裁剪，则会触发离屏渲染。<br>如果改为UIButton中的UIImageView添加圆角和裁剪，则 不会触发离屏渲染。</p>
+<p><strong>总结: 只要裁剪的内容需要画家算法未完成之前的内容参与就会触发offscreenrendering</strong></p>
+<h3 id="哪些情况会造成离屏渲染"><a href="#哪些情况会造成离屏渲染" class="headerlink" title="哪些情况会造成离屏渲染"></a>哪些情况会造成离屏渲染</h3><ul>
+<li><p>采用了光栅化的 layer (layer.shouldRasterize)</p>
+</li>
+<li><p>使用了 mask 的 layer (layer.mask)</p>
+</li>
+<li><p>需要进行裁剪的 layer (layer.masksToBounds /view.clipsToBounds)</p>
+</li>
+<li><p>设置了组透明度为 YES，并且透明度不为 1 的layer (layer.allowsGroupOpacity/ layer.opacity)</p>
+</li>
+<li><p>使用了高斯模糊</p>
+</li>
+<li><p>添加了投影的 layer (layer.shadow*)</p>
+</li>
+<li><p>绘制了文字的 layer (UILabel, CATextLayer, Core Text 等)</p>
+</li>
+</ul>
+<h3 id="为什么要避免离屏渲染"><a href="#为什么要避免离屏渲染" class="headerlink" title="为什么要避免离屏渲染"></a>为什么要避免离屏渲染</h3><ul>
+<li><p>需要额外的存储空间</p>
+</li>
+<li><p>频繁的上下文切换</p>
+</li>
+<li><p>一旦因为离屏渲染导致最终存入帧缓存区的时候，已经超过了16.67ms，则会出现掉帧的情况，造成卡顿</p>
+</li>
+</ul>
+<h3 id="怎么高效的实现控件的圆角效果"><a href="#怎么高效的实现控件的圆角效果" class="headerlink" title="怎么高效的实现控件的圆角效果"></a>怎么高效的实现控件的圆角效果</h3><ul>
+<li><p>创建上下文, 使用Core Graphics(CGContextClip等)对图片进行重绘 (Core Graphics走的是CPU,消耗的性能较大)</p>
+</li>
+<li><p>CAShapeLayer + UIBezierPath(也会触发离屏渲染): 利用CAShapeLayer圆角,替换原本的layer,达到圆角效果(CAShapeLayer动画渲染是驱动GPU，Core Graphics方法使用CPU渲染，相比其效率更高，消耗内存更少。)</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/30/iOS/UI/%E5%8D%A1%E9%A1%BF&%E6%8E%89%E5%B8%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/30/iOS/UI/%E5%8D%A1%E9%A1%BF&%E6%8E%89%E5%B8%A7/" class="post-title-link" itemprop="url">卡顿&掉帧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-30 11:00:42 / Modified: 11:27:44" itemprop="dateCreated datePublished" datetime="2021-12-30T11:00:42+08:00">2021-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>以60FPS为例, 在规定的16.7ms内, 下一帧VSync信号到来之前, CPU和GPU共同完成的下一帧并没有合成完成, 就会造成卡顿和掉帧</p>
+<h3 id="卡顿产生的原因"><a href="#卡顿产生的原因" class="headerlink" title="卡顿产生的原因"></a>卡顿产生的原因</h3><img src="/2021/12/30/iOS/UI/%E5%8D%A1%E9%A1%BF&%E6%8E%89%E5%B8%A7/A79FBC2D-C4E1-4014-A102-F4C509FE2C99.png" class="" title="This is an image">
+
+<p>在 VSync 信号到来后，系统图形服务会通过 CADisplayLink 等机制通知 App，App 主线程开始在 CPU 中计算显示内容，比如视图的创建、布局计算、图片解码、文本绘制等。随后 CPU 会将计算好的内容提交到 GPU 去，由 GPU 进行变换、合成、渲染。随后 GPU 会把渲染结果提交到帧缓冲区去，等待下一次 VSync 信号到来时显示到屏幕上。由于垂直同步的机制，如果在一个 VSync 时间内，CPU 或者 GPU 没有完成内容提交，则那一帧就会被丢弃，等待下一次机会再显示，而这时显示屏会保留之前的内容不变。这就是界面卡顿的原因。</p>
+<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><h4 id="CPU-资源消耗原因和解决方案"><a href="#CPU-资源消耗原因和解决方案" class="headerlink" title="CPU 资源消耗原因和解决方案"></a>CPU 资源消耗原因和解决方案</h4><h5 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h5><h6 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h6><p>对象的创建会分配内存、调整属性、甚至还有读取文件等操作，比较消耗 CPU 资源。尽量用轻量的对象代替重量的对象，可以对性能有所优化。比如 CALayer 比 UIView 要轻量许多，那么不需要响应触摸事件的控件，用 CALayer 显示会更加合适。如果对象不涉及 UI 操作，则尽量放到后台线程去创建，但可惜的是包含有 CALayer 的控件，都只能在主线程创建和操作。通过 Storyboard 创建视图对象时，其资源消耗会比直接通过代码创建对象要大非常多，在性能敏感的界面里，Storyboard 并不是一个好的技术选择。</p>
+<p>尽量推迟对象创建的时间，并把对象的创建分散到多个任务中去。尽管这实现起来比较麻烦，并且带来的优势并不多，但如果有能力做，还是要尽量尝试一下。如果对象可以复用，并且复用的代价比释放、创建新对象要小，那么这类对象应当尽量放到一个缓存池里复用。</p>
+<h6 id="对象调整"><a href="#对象调整" class="headerlink" title="对象调整"></a>对象调整</h6><p>对象的调整也经常是消耗 CPU 资源的地方。这里特别说一下 CALayer：CALayer 内部并没有属性，当调用属性方法时，它内部是通过运行时 resolveInstanceMethod 为对象临时添加一个方法，并把对应属性值保存到内部的一个 Dictionary 里，同时还会通知 delegate、创建动画等等，非常消耗资源。UIView 的关于显示相关的属性（比如 frame/bounds/transform）等实际上都是 CALayer 属性映射来的，所以对 UIView 的这些属性进行调整时，消耗的资源要远大于一般的属性。对此你在应用中，应该尽量减少不必要的属性修改。</p>
+<p>当视图层次调整时，UIView、CALayer 之间会出现很多方法调用与通知，所以在优化性能时，应该尽量避免调整视图层次、添加和移除视图。</p>
+<h6 id="对象销毁"><a href="#对象销毁" class="headerlink" title="对象销毁"></a>对象销毁</h6><p>对象的销毁虽然消耗资源不多，但累积起来也是不容忽视的。通常当容器类持有大量对象时，其销毁时的资源消耗就非常明显。同样的，如果对象可以放到后台线程去释放，那就挪到后台线程去。这里有个小 Tip：把对象捕获到 block 中，然后扔到后台队列去随便发送个消息以避免编译器警告，就可以让对象在后台线程销毁了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSArray *tmp = self.array;</span><br><span class="line">self.array = nil;</span><br><span class="line">dispatch_async(queue, ^&#123;</span><br><span class="line">    [tmp class];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="预排版"><a href="#预排版" class="headerlink" title="预排版"></a>预排版</h5><h6 id="布局计算"><a href="#布局计算" class="headerlink" title="布局计算"></a>布局计算</h6><p>视图布局的计算是 App 中最为常见的消耗 CPU 资源的地方。如果能在后台线程提前计算好视图布局、并且对视图布局进行缓存，那么这个地方基本就不会产生性能问题了。</p>
+<p>不论通过何种技术对视图进行布局，其最终都会落到对 UIView.frame/bounds/center 等属性的调整上。上面也说过，对这些属性的调整非常消耗资源，所以尽量提前计算好布局，在需要时一次性调整好对应属性，而不要多次、频繁的计算和调整这些属性。</p>
+<h6 id="Autolayout"><a href="#Autolayout" class="headerlink" title="Autolayout"></a>Autolayout</h6><p>Autolayout 是苹果本身提倡的技术，在大部分情况下也能很好的提升开发效率，但是 Autolayout 对于复杂视图来说常常会产生严重的性能问题。随着视图数量的增长，Autolayout 带来的 CPU 消耗会呈指数级上升。具体数据可以看这个文章：<a target="_blank" rel="noopener" href="http://pilky.me/36/%E3%80%82">http://pilky.me/36/。</a> 如果你不想手动调整 frame 等属性，你可以用一些工具方法替代（比如常见的 left/right/top/bottom/width/height 快捷属性），或者使用 ComponentKit、AsyncDisplayKit 等框架。</p>
+<p><em>经过多个版本迭代, 目前Autolayout的性能如何待调研</em></p>
+<h6 id="文本计算"><a href="#文本计算" class="headerlink" title="文本计算"></a>文本计算</h6><p>如果一个界面中包含大量文本（比如微博微信朋友圈等），文本的宽高计算会占用很大一部分资源，并且不可避免。如果你对文本显示没有特殊要求，可以参考下 UILabel 内部的实现方式：用 [NSAttributedString boundingRectWithSize:options:context:] 来计算文本宽高，用 -[NSAttributedString drawWithRect:options:context:] 来绘制文本。尽管这两个方法性能不错，但仍旧需要放到后台线程进行以避免阻塞主线程。</p>
+<p>如果你用 CoreText 绘制文本，那就可以先生成 CoreText 排版对象，然后自己计算了，并且 CoreText 对象还能保留以供稍后绘制使用。</p>
+<h5 id="预渲染"><a href="#预渲染" class="headerlink" title="预渲染"></a>预渲染</h5><h6 id="文本渲染"><a href="#文本渲染" class="headerlink" title="文本渲染"></a>文本渲染</h6><p>屏幕上能看到的所有文本内容控件，包括 UIWebView，在底层都是通过 CoreText 排版、绘制为 Bitmap 显示的。常见的文本控件 （UILabel、UITextView 等），其排版和绘制都是在主线程进行的，当显示大量文本时，CPU 的压力会非常大。对此解决方案只有一个，那就是自定义文本控件，用 TextKit 或最底层的 CoreText 对文本异步绘制。尽管这实现起来非常麻烦，但其带来的优势也非常大，CoreText 对象创建好后，能直接获取文本的宽高等信息，避免了多次计算（调整 UILabel 大小时算一遍、UILabel 绘制时内部再算一遍）；CoreText 对象占用内存较少，可以缓存下来以备稍后多次渲染。</p>
+<h6 id="图片的解码"><a href="#图片的解码" class="headerlink" title="图片的解码"></a>图片的解码</h6><p>当你用 UIImage 或 CGImageSource 的那几个方法创建图片时，图片数据并不会立刻解码。图片设置到 UIImageView 或者 CALayer.contents 中去，并且 CALayer 被提交到 GPU 前，CGImage 中的数据才会得到解码。这一步是发生在主线程的，并且不可避免。如果想要绕开这个机制，常见的做法是在后台线程先把图片绘制到 CGBitmapContext 中，然后从 Bitmap 直接创建图片。目前常见的网络图片库都自带这个功能。</p>
+<h6 id="图像的绘制"><a href="#图像的绘制" class="headerlink" title="图像的绘制"></a>图像的绘制</h6><p>图像的绘制通常是指用那些以 CG 开头的方法把图像绘制到画布中，然后从画布创建图片并显示这样一个过程。这个最常见的地方就是 [UIView drawRect:] 里面了。由于 CoreGraphic 方法通常都是线程安全的，所以图像的绘制可以很容易的放到后台线程进行。一个简单异步绘制的过程大致如下（实际情况会比这个复杂得多，但原理基本一致）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (void)display &#123;</span><br><span class="line">    dispatch_async(backgroundQueue, ^&#123;</span><br><span class="line">        CGContextRef ctx = CGBitmapContextCreate(...);</span><br><span class="line">        // draw <span class="keyword">in</span> context...</span><br><span class="line">        CGImageRef img = CGBitmapContextCreateImage(ctx);</span><br><span class="line">        CFRelease(ctx);</span><br><span class="line">        dispatch_async(mainQueue, ^&#123;</span><br><span class="line">            layer.contents = img;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="GPU-资源消耗原因和解决方案"><a href="#GPU-资源消耗原因和解决方案" class="headerlink" title="GPU 资源消耗原因和解决方案"></a>GPU 资源消耗原因和解决方案</h4><h5 id="纹理渲染"><a href="#纹理渲染" class="headerlink" title="纹理渲染"></a>纹理渲染</h5><p>所有的 Bitmap，包括图片、文本、栅格化的内容，最终都要由内存提交到显存，绑定为 GPU Texture。不论是提交到显存的过程，还是 GPU 调整和渲染 Texture 的过程，都要消耗不少 GPU 资源。当在较短时间显示大量图片时（比如 TableView 存在非常多的图片并且快速滑动时），CPU 占用率很低，GPU 占用非常高，界面仍然会掉帧。避免这种情况的方法只能是尽量减少在短时间内大量图片的显示，尽可能将多张图片合成为一张进行显示。</p>
+<p>当图片过大，超过 GPU 的最大纹理尺寸时，图片需要先由 CPU 进行预处理，这对 CPU 和 GPU 都会带来额外的资源消耗。目前来说，iPhone 4S 以上机型，纹理尺寸上限都是 4096×4096，更详细的资料可以看这里：iosres.com。所以，尽量不要让图片和视图的大小超过这个值。</p>
+<h5 id="视图混合-Composing"><a href="#视图混合-Composing" class="headerlink" title="视图混合 (Composing)"></a>视图混合 (Composing)</h5><p>当多个视图（或者说 CALayer）重叠在一起显示时，GPU 会首先把他们混合到一起。如果视图结构过于复杂，混合的过程也会消耗很多 GPU 资源。为了减轻这种情况的 GPU 消耗，应用应当尽量减少视图数量和层次，并在不透明的视图里标明 opaque 属性以避免无用的 Alpha 通道合成。当然，这也可以用上面的方法，把多个视图预先渲染为一张图片来显示。</p>
+<h5 id="图形生成"><a href="#图形生成" class="headerlink" title="图形生成"></a>图形生成</h5><p>CALayer 的 border、圆角、阴影、遮罩（mask），CASharpLayer 的矢量图形显示，通常会触发离屏渲染（offscreen rendering），而离屏渲染通常发生在 GPU 中。当一个列表视图中出现大量圆角的 CALayer，并且快速滑动时，可以观察到 GPU 资源已经占满，而 CPU 资源消耗很少。这时界面仍然能正常滑动，但平均帧数会降到很低。为了避免这种情况，可以尝试开启 CALayer.shouldRasterize 属性，但这会把原本离屏渲染的操作转嫁到 CPU 上去。对于只需要圆角的某些场合，也可以用一张已经绘制好的圆角图片覆盖到原本视图上面来模拟相同的视觉效果。最彻底的解决办法，就是把需要显示的图形在后台线程绘制为图片，避免使用圆角、阴影、遮罩等属性。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
   
   
-  <div class="post-block">
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">图像显示原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-29 20:37:03" itemprop="dateCreated datePublished" datetime="2021-12-29T20:37:03+08:00">2021-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-30 10:57:59" itemprop="dateModified" datetime="2021-12-30T10:57:59+08:00">2021-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="屏幕显示图像的原理"><a href="#屏幕显示图像的原理" class="headerlink" title="屏幕显示图像的原理"></a>屏幕显示图像的原理</h3><img src="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/A2A666D8-C4D3-4702-86D9-00B76CEBC609.png" class="" title="This is an image">
+
+<p>首先从过去的 CRT 显示器原理说起。CRT 的电子枪按照上面方式，从上到下一行行扫描，扫描完成后显示器就呈现一帧画面，随后电子枪回到初始位置继续下一次扫描。为了把显示器的显示过程和系统的视频控制器进行同步，显示器（或者其他硬件）会用硬件时钟产生一系列的定时信号。当电子枪换到新的一行，准备进行扫描时，显示器会发出一个水平同步信号（horizonal synchronization），简称 HSync；而当一帧画面绘制完成后，电子枪回复到原位，准备画下一帧前，显示器会发出一个垂直同步信号（vertical synchronization），简称 VSync。显示器通常以固定频率进行刷新，这个刷新率就是 VSync 信号产生的频率。尽管现在的设备大都是液晶显示屏了，但原理仍然没有变。</p>
+<h3 id="屏幕图形显示结构"><a href="#屏幕图形显示结构" class="headerlink" title="屏幕图形显示结构"></a>屏幕图形显示结构</h3><img src="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/7BA90FE9-B975-4D25-A870-2EB996926B64.png" class="" title="This is an image">
+
+<p>CPU将图形数据通过总线BUS提交至GPU，GPU经过渲染处理转化为一帧帧的数据并提交至帧缓冲区，视频控制器会通过垂直同步信号VSync逐帧读取帧缓冲区的数据并提交至屏幕控制器最终显示在屏幕上。</p>
+<h3 id="双缓冲机制"><a href="#双缓冲机制" class="headerlink" title="双缓冲机制"></a>双缓冲机制</h3><img src="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/27A5F497-17F3-4D00-9594-AEDA0C6B2DDE.png" class="" title="This is an image">
+
+<p>为解决一个帧缓冲区效率问题(读取和写入都是一个无法有效的并发处理)，采用双缓冲机制，在这种情况下，GPU 会预先渲染一帧放入一个缓冲区中，用于视频控制器的读取。当下一帧渲染完毕后，GPU 会直接把视频控制器的指针指向第二个缓冲器，如图所示</p>
+<h3 id="画面撕裂"><a href="#画面撕裂" class="headerlink" title="画面撕裂"></a>画面撕裂</h3><img src="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/A9D9461A-2433-47F3-955B-AB4BA82245F2.png" class="" title="This is an image">
+
+<p>双缓冲机制虽然提升了效率但也引入了画面撕裂问题，即当视频控制器还未读取完成时，即屏幕内容刚显示一半时，GPU 将新的一帧内容提交到帧缓冲区并把两个缓冲区进行交换后，视频控制器就会把新的一帧数据的下半段显示到屏幕上，造成画面撕裂现象，如图所示.</p>
+<p>为了解决这个问题，GPU 通常有一个机制叫做垂直同步（简写也是 V-Sync），当开启垂直同步后，GPU 会等待显示器的 VSync 信号发出后，才进行新的一帧渲染和缓冲区更新。这样能解决画面撕裂现象，也增加了画面流畅度，但需要消费更多的计算资源，也会带来部分延迟。</p>
+<h3 id="图形渲染技术栈"><a href="#图形渲染技术栈" class="headerlink" title="图形渲染技术栈"></a>图形渲染技术栈</h3><img src="/2021/12/29/iOS/UI/%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86/A0F25D10-87FC-40C9-8E1C-9CE2038B1B88.png" class="" title="This is an image">
+
+<ul>
+<li><p>UIKit: UIKit 自身并不具备在屏幕成像的能力，其主要负责对用户操作事件的响应（UIView 继承自 UIResponder），事件响应的传递大体是经过逐层的 视图树 遍历实现的。</p>
+</li>
+<li><p>Core Animation: Core Animation 是一个复合引擎，其职责是尽可能快地组合屏幕上不同的可视内容，这些可视内容可被分解成独立的图层（即 CALayer），这些图层会被存储在一个叫做图层树的体系之中。从本质上而言，CALayer 是用户所能在屏幕上看见的一切的基础。</p>
+</li>
+<li><p>Core Graphics: Core Graphics 基于 Quartz 高级绘图引擎，主要用于运行时绘制图像。开发者可以使用此框架来处理基于路径的绘图，转换，颜色管理，离屏渲染，图案，渐变和阴影，图像数据管理，图像创建和图像遮罩以及 PDF 文档创建，显示和分析。</p>
+</li>
+<li><p>Core Image: Core Image 与 Core Graphics 恰恰相反，Core Graphics 用于在运行时创建图像，而 Core Image 是用来处理运行前创建的图像的。Core Image 框架拥有一系列现成的图像过滤器，能对已存在的图像进行高效的处理。</p>
+</li>
+<li><p>OpenGL(ES): OpenGL ES（OpenGL for Embedded Systems，简称 GLES），是 OpenGL 的子集。</p>
+</li>
+<li><p>Metal: Metal 类似于 OpenGL ES，也是一套第三方标准，具体实现由苹果实现。大多数开发者都没有直接使用过 Metal，但其实所有开发者都在间接地使用 Metal。Core Animation、Core Image、SceneKit、SpriteKit 等等渲染框架都是构建于 Metal 之上的。当在真机上调试 OpenGL 程序时，控制台会打印出启用 Metal 的日志。根据这一点可以猜测，Apple 已经实现了一套机制将 OpenGL 命令无缝桥接到 Metal 上，由 Metal 担任真正于硬件交互的工作。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/" class="post-title-link" itemprop="url">事件传递&响应者链</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-29 19:06:55 / Modified: 20:34:47" itemprop="dateCreated datePublished" datetime="2021-12-29T19:06:55+08:00">2021-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="事件传递过程"><a href="#事件传递过程" class="headerlink" title="事件传递过程"></a>事件传递过程</h3><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/C708B73F-4B04-44E8-B655-F3EF81A9749C.png" class="" title="This is an image">
+
+<p>触摸事件发生后, UIApplication 会触发 func sendEvent(_ event: UIEvent) 将封装好的 UIEvent 传给 UIWindow(当前展示的UIWindow), 通常接下来传给 UIViewController 然后传给 UIViewController 的根视图, 然后👇🏻</p>
+<h4 id="命中测试-hitTest"><a href="#命中测试-hitTest" class="headerlink" title="命中测试(hitTest)"></a>命中测试(hitTest)</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/2031C1E0-CD22-4887-974F-816D5575DF78.png" class="" title="This is an image">
+
+<p>① 检查自身是否可以接收事件, 以下三种情况无法接收事件:</p>
+<ul>
+<li>view.isUserInteractionEnabled = false</li>
+<li>view.alpha &lt;= 0.01</li>
+<li>view.isHidden = true</li>
+</ul>
+<p>② 检查坐标是否在自身内部, 使用 func point(inside point: CGPoint, wizzth event: UIEvent?) -&gt; Bool 方法判断, 该方法可以被重写</p>
+<p>③ 从后往前遍历子视图重复执行命中测试, 保证后添加的视图先遍历, 即使视图有重叠, 该视图也是同级中展示最完整的, 即用户最可能想点击的视图</p>
+<h4 id="确定第一响应者"><a href="#确定第一响应者" class="headerlink" title="确定第一响应者"></a>确定第一响应者</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/B0ABE2DF-0087-492F-9A07-7E2BD9CD5B0E.png" class="" title="This is an image">
+
+<p>整个命中测试的走向是这样的：A✅ –&gt; D❎ –&gt; B✅ –&gt; C❎ &gt;&gt;&gt;&gt; B</p>
+<p>实际上这个流程就是 UIView 的一个方法：func hitTest(_ point: CGPoint, with event: UIEvent?) -&gt; UIView?，方法最后返回的 UIView? 即第一响应者</p>
+<h4 id="越界"><a href="#越界" class="headerlink" title="越界!"></a>越界!</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/31B1BB9C-89E7-4E9E-AE05-EA7690765197.png" class="" title="This is an image">
+
+<p>如图, 最终获得第一响应者仍然是 B，甚至整个命中测试的走向和之前是一样的：A✅ –&gt; D❎ –&gt; B✅ –&gt; C❎ &gt;&gt;&gt;&gt; B，究其原因是在 D 检查触摸点是否在自身内部时，答案是否，所以不会去对 E 进行命中测试，即使看起来我们点了 E。这个例子告诉我们，要注意可点击的子视图是否会超出父视图的范围。另若有这种情况可以重写 func point(inside point: CGPoint, with event: UIEvent?) -&gt; Bool 方法来扩大点击有效范围。</p>
+<h3 id="响应链传递"><a href="#响应链传递" class="headerlink" title="响应链传递"></a>响应链传递</h3><h4 id="确定响应链成员"><a href="#确定响应链成员" class="headerlink" title="确定响应链成员"></a>确定响应链成员</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/15F294D4-4F56-46B9-96A0-1B0436EDEB94.png" class="" title="This is an image">
+
+<p>在找到了第一响应者之后，整个响应链也随着确定下来了。所谓响应链是由响应者组成的一个链表，链表的头是第一响应者，链表的每个结点的下一个结点都是该结点的 next 属性。</p>
+<p>默认来说，若该结点是 UIView 类型的话，这个 next 属性是该结点的父视图。但也有几个例外：</p>
+<ul>
+<li><p>如果是 UIViewController 的根视图，则下一个响应者是 UIViewController。</p>
+</li>
+<li><p>如果是 UIViewController</p>
+<ul>
+<li>如果 UIViewController 的视图是 UIWindow 的根视图，则下一个响应者是 UIWindow 对象。</li>
+<li>如果 UIViewController 是由另一个 UIViewController 呈现的，则下一个响应者是第二个 UIViewController。</li>
+</ul>
+</li>
+<li><p>UIWindow的下一个响应者是 UIApplication</p>
+</li>
+<li><p>UIApplication 的下一个响应者是 app delegate。但仅当该 app delegate 是 UIResponder 的实例且不是 UIView、UIViewController 或 app 对象本身时，才是下一个响应者。</p>
+</li>
+</ul>
+<h4 id="沿响应链传递事件"><a href="#沿响应链传递事件" class="headerlink" title="沿响应链传递事件"></a>沿响应链传递事件</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/290E2C72-06E8-4C29-9323-75DA862B6772.png" class="" title="This is an image">
+
+<p>触摸事件首先将会由第一响应者响应，触发其 open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) 等方法，根据触摸的方式不同（如拖动，双指），具体的方法和过程也不一样。若第一响应者在这个方法中不处理这个事件，则会传递给响应链中的下一个响应者触发该方法处理，若下一个也不处理，则以此类推传递下去。若到最后还没有人响应，则会被丢弃（比如一个误触） </p>
+<h4 id="阻断响应链传递"><a href="#阻断响应链传递" class="headerlink" title="阻断响应链传递"></a>阻断响应链传递</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/5C23F3FB-57F1-42A3-A295-97359D12123E.png" class="" title="This is an image">
+
+<p>如果我们把上图中的 C 换成平时使用的 UIControl 类，控制台又会怎么打印呢？</p>
+<p>如图所示，会发现响应链的事件传递到 C 处就停止了，也就是 A 的 touches 方法没有被触发。这意味着在响应链中，UIControl 及其子类默认来说，是不会将事件传递下去的。在代码中，可以理解为 UIView 默认会在其 touches 方法中去调用其 next 的 touches 方法，而 UIControl 默认不会去调用。这样就做到了，当某个控件接受了事件之后，事件的传递就会终止。另外，UIScrollView 也是这样的工作机制。</p>
+<h3 id="响应链及手势识别"><a href="#响应链及手势识别" class="headerlink" title="响应链及手势识别"></a>响应链及手势识别</h3><h4 id="当手势识别参与响应链"><a href="#当手势识别参与响应链" class="headerlink" title="当手势识别参与响应链"></a>当手势识别参与响应链</h4><img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/F7D740CA-617A-4BFE-A9D7-D07E0B2D1E7B.png" class="" title="This is an image">
+
+<img src="/2021/12/29/iOS/UI/%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92&%E5%93%8D%E5%BA%94%E8%80%85%E9%93%BE/58D35CDC-3D1A-4379-9B77-0DE377CD89DF.png" class="" title="This is an image">
+
+<p>从图中我们可以看到，当不带手势的情况下，手指按下去的时候，响应者的 touchBegan 方法会触发，随着手指的移动，touchMoved 会不断触发，当手指结束移动并抬起来的时候，touchEnded 会触发。在这个过程中，我们接收到一直是一个不断更新的 UITouch。</p>
+<p>在该视图有添加一个 UIPanGestureRecognizer 手势的情况下，我们多了下方这一条来表示与响应链同时工作的手势识别系统，可以看到手势识别系统也是在手指按下去那一刻就开始工作的，前半段处于一直正在识别的状态。在我们拖动了很小一段距离之后（注意这时候我们的手指还没抬起）， 手势识别系统确定了该 UITouch 所做的动作是符合 UIPanGestureRecognizer 的特点的，于是给该视图的响应链发送了 touchCancelled 的信息，从而阻止这个 UITouch 继续触发这个视图的 touches 系列方法（同时也取消了别的相关手势的 touches 系列方法，图中未体现）。在这之后，被调用的只有与手势关联的 target-action 方法（也就是图中的墨绿色节点 call PanFunction）。</p>
+<p><em><strong>再进一步理解</strong></em><br>为了图片的美观和易读，在图片中隐去了不少细节，在此列出：</p>
+<ul>
+<li><p>手势识别器的状态在图中未标出：</p>
+<ul>
+<li>手势在图中 recognizing 的橙色节点处和 recognized 棕色节点处都处于 .possible 状态</li>
+<li>手势在图中绿色节点处的状态变化是 .began -&gt; [.changed] -&gt; ended</li>
+</ul>
+</li>
+<li><p>手势识别器不是响应者，但也有 touches 系列方法，比它所添加的视图的 touches 方法更早那么一点触发</p>
+<ul>
+<li>从图中也可以看出，手势那条线上的每个节点都稍靠左一些</li>
+<li>手势那条线上的橙、棕、墨绿色节点处也可以看做手势识别器的 touches 方法触发</li>
+</ul>
+</li>
+<li><p>更详细的触发顺序应当如下图所示（在一个 UIView 上添加了 UIPanGestureRecognizer ，并单指在上面滑动一段距离的情况）</p>
+</li>
+</ul>
+<p>(手势和响应者的 touches 方法名字是一样的，都是「began」，「moved」，「ended」，「cancelled」。很容易和手势识别器的 state 属性搞混，state 属性是根据每个手势的类型（离散型/连续型）的不同，可能有 .possible、.began、.changed、.ended、.cancelled、.failed 这些状态，名字很像方法名很像但不是一回事。)</p>
+<h4 id="UIControl-与手势识别"><a href="#UIControl-与手势识别" class="headerlink" title="UIControl 与手势识别"></a>UIControl 与手势识别</h4><p>由于 UIControl 接收 target-action 方法的方式是在其 touches 方法中识别、接收、处理，而手势的 touches 方法一定比其所在视图的 touches 方法早触发。可以得到的结论是：对于自定义的 UIControl 来说，手势识别的优先级比 UIControl 自身处理事件的优先级高。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总的来说，触摸屏幕后事件的传递可以分为以下几个步骤：</p>
+<ol>
+<li><p>通过「命中测试」来找到「第一响应者」</p>
+</li>
+<li><p>由「第一响应者」来确定「响应链」</p>
+</li>
+<li><p>将事件沿「响应链」传递</p>
+</li>
+<li><p>事件被某个响应者接收，或没有响应者接收从而被丢弃</p>
+</li>
+</ol>
+<p>在步骤 3 中，事件沿「响应链」传递这个过程，就是响应者通过调用其 next 的 touches 系列方法来实现的。在上篇文章中我们也提到，假如我们使用 UIControl 等类作为响应者，这些类本身就不会调用其 next 的 touches 系列方法，从而实现阻断响应链的效果，也可以认为是实现接受某个事件的效果。</p>
+<p>手势识别器(UIGestureRecognizer)在大多数情况下，识别屏幕触摸事件的优先级，比控件本身的方法的优先级高。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/12/29/iOS/UI/UITableView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Courser's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/29/iOS/UI/UITableView/" class="post-title-link" itemprop="url">UITableView</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-29 17:11:49 / Modified: 19:03:23" itemprop="dateCreated datePublished" datetime="2021-12-29T17:11:49+08:00">2021-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/UI/" itemprop="url" rel="index"><span itemprop="name">UI</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="UITableView的重用机制"><a href="#UITableView的重用机制" class="headerlink" title="UITableView的重用机制"></a>UITableView的重用机制</h3><img src="/2021/12/29/iOS/UI/UITableView/0398244C-928A-412F-BEFE-6BA54BA5E0ED.png" class="" title="This is an image">
+
+<h4 id="UITableView的重用机制可以理解为四个部分"><a href="#UITableView的重用机制可以理解为四个部分" class="headerlink" title="UITableView的重用机制可以理解为四个部分"></a>UITableView的重用机制可以理解为四个部分</h4><ul>
+<li>即将滚出可视区域的cell</li>
+<li>可视区域显示的cell</li>
+<li>即将滚入可视区域的cell</li>
+<li>重用池</li>
+</ul>
+<h4 id="重用机制"><a href="#重用机制" class="headerlink" title="重用机制"></a>重用机制</h4><ul>
+<li>即将滚入可视区域的cell, 先去重用池中根据identifier寻找是否有可重用的cell, 有就复用, 没有就创建一个cell</li>
+<li>即将滚出可视区域的cell, 在滚出可视区域后, 根据identifier去复用池查找是否存在这个cell, 没有就加入缓冲池(重用池)</li>
+<li>如此滚动循环根据identifier完成缓冲池(复用池)的更新和cell的重用</li>
+</ul>
+<h3 id="数据源同步"><a href="#数据源同步" class="headerlink" title="数据源同步"></a>数据源同步</h3><h4 id="方案一-并发访问-数据拷贝"><a href="#方案一-并发访问-数据拷贝" class="headerlink" title="方案一 (并发访问, 数据拷贝)"></a>方案一 (并发访问, 数据拷贝)</h4><img src="/2021/12/29/iOS/UI/UITableView/78636893-F9AA-4FEA-BA71-8DD4EB997002.png" class="" title="This is an image">
+
+<p>① 先将数据拷贝一份(一般在主线程)<br>② 拷贝的数据传给子线程, 在子线程对数据进行处理(新数据请求、数据解析、预排版等)<br>③ 子线程处理新数据的同时, 在主线程对数据进行了删除/新增操作, 需要对删除/新增操作进行记录, 然后reloadUI<br>④ 子线程处理完数据之后, 同步删除/新增操作<br>⑤ 回到主线程reloadUI</p>
+<h4 id="方案二-串行访问"><a href="#方案二-串行访问" class="headerlink" title="方案二 (串行访问)"></a>方案二 (串行访问)</h4><img src="/2021/12/29/iOS/UI/UITableView/D1A906F5-B600-440D-B9AE-FE416040FB07.png" class="" title="This is an image">
+
+<p>① 子线程进行网络请求, 数据解析, 然后交给子线程的串行队列进行预排版<br>② 此时在主线程进行了删除/新增操作, 需要同步的在串行队列中进行处理, 如果此时串行队列中有任务正在进行, 会block直至队列中的任务处理完<br>③ 在串行队列中同步主线程的删除/新增操作, 回到主线程reloadUI</p>
+<h4 id="取舍"><a href="#取舍" class="headerlink" title="取舍"></a>取舍</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方案一(并发访问, 数据拷贝): 需要记录操作, 且数据拷贝也需要额外的内存, 所以可能会有内存开销的问题</span><br><span class="line">方案二(串行访问): 如果在子线程处理的任务特别耗时, 那么主线程的操作可能会有一定延迟</span><br></pre></td></tr></table></figure>
+
+<p>两种方案各有利弊, 根据实际情况选择哪种方案</p>
+<h3 id="UITableView-中-cell-的动态高度计算"><a href="#UITableView-中-cell-的动态高度计算" class="headerlink" title="UITableView 中 cell 的动态高度计算"></a>UITableView 中 cell 的动态高度计算</h3><ul>
+<li>cell 使用 AutoLayout 布局, 设置tableview 的 estimatedRowHeight 为一个非零值(预估高度, 不用太准确), rowHeight 设置为 UITableViewAutomaticDimension</li>
+<li>手动计算每个控件的高度并相加, 然后缓存高度</li>
+</ul>
+<h3 id="如何对-UITableView-的滚动加载进行优化，防止卡顿"><a href="#如何对-UITableView-的滚动加载进行优化，防止卡顿" class="headerlink" title="如何对 UITableView 的滚动加载进行优化，防止卡顿"></a>如何对 UITableView 的滚动加载进行优化，防止卡顿</h3><h4 id="减少-cellForRowAtIndexPath-代理中的计算量-cell的内容计算"><a href="#减少-cellForRowAtIndexPath-代理中的计算量-cell的内容计算" class="headerlink" title="减少 cellForRowAtIndexPath 代理中的计算量(cell的内容计算)"></a>减少 cellForRowAtIndexPath 代理中的计算量(cell的内容计算)</h4><ul>
+<li><p>提前计算每个 cell 中需要的一些基本数据, 代理调用是直接使用</p>
+</li>
+<li><p>图片优化</p>
+<ul>
+<li>图片异步加载</li>
+<li>子线程预解码 (<a target="_blank" rel="noopener" href="https://dreampiggy.com/2019/01/18/%E4%B8%BB%E6%B5%81%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%BA%93%E6%89%80%E4%BD%BF%E7%94%A8%E7%9A%84%E9%A2%84%E8%A7%A3%E7%A0%81%E7%A9%B6%E7%AB%9F%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/">主流图片加载库所使用的预解码究竟干了什么</a>)</li>
+<li>优化图片大小, 尽量避免动态缩放(contentMode), 必要时准备一张缩略图和一张高清图, 需要时再加载高清图</li>
+<li>尽可能将多张图片合成一张进行展示</li>
+<li>图片”懒加载”(延迟加载), 快速滚动时不频繁的请求/处理数据</li>
+</ul>
+</li>
+</ul>
+<h4 id="减少-heightForRowAtIndexPath-代理中的计算量-cell的高度计算"><a href="#减少-heightForRowAtIndexPath-代理中的计算量-cell的高度计算" class="headerlink" title="减少 heightForRowAtIndexPath 代理中的计算量(cell的高度计算)"></a>减少 heightForRowAtIndexPath 代理中的计算量(cell的高度计算)</h4><ul>
+<li><p>如果 cell 的高度是固定的, 去掉 heightForRowAtIndexPath 的代理, 直接设置 UITableView 的 rowHeight 为固定高度</p>
+</li>
+<li><p>预计算 cell 的高度并缓存, heightForRowAtIndexPath 调用时直接设置</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2021/04/28/TechnicalSupport/Langya_novel_technical_support/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Courser's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2021/04/28/TechnicalSupport/Langya_novel_technical_support/" class="post-title-link" itemprop="url">琅琊小说</a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/28/TechnicalSupport/Langya_novel_technical_support/" class="post-title-link" itemprop="url">琅琊小说</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
+              <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
-              <time title="Created: 2021-04-28 10:36:05 / Modified: 11:15:25" itemprop="dateCreated datePublished" datetime="2021-04-28T10:36:05+08:00">2021-04-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/TechnicalSupport/" itemprop="url" rel="index"><span itemprop="name">TechnicalSupport</span></a></span>
-
-                
-                
-              
+              <time title="Created: 2021-04-28 10:36:05" itemprop="dateCreated datePublished" datetime="2021-04-28T10:36:05+08:00">2021-04-28</time>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-29 15:42:08" itemprop="dateModified" datetime="2021-12-29T15:42:08+08:00">2021-12-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TechnicalSupport/" itemprop="url" rel="index"><span itemprop="name">TechnicalSupport</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -385,173 +928,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>最全书库: 海量小说免费看<br>最快更新: 第一时间推更<br>远离书荒: 智能推荐、热门榜单<br>阅读体验: 提供最好的阅读体验</p>
+<h3 id="应用详情"><a href="#应用详情" class="headerlink" title="应用详情"></a>应用详情</h3><p>手机必备的阅读软件, 全网海量小说随心看, 给用户提供最优质的阅读体验。</p>
+<p>联系邮箱: <a href="mailto:&#110;&#111;&#x73;&#x75;&#x61;&#x6e;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#109;">&#110;&#111;&#x73;&#x75;&#x61;&#x6e;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#109;</a></p>
 
-      
-        
-          
-            <p>
-              简介最全书库: 海量小说免费看最快更新: 第一时间推更远离书荒: 智能推荐、热门榜单阅读体验: 提供最好的阅读体验
-应用详情手机必备的阅读软件, 全网海量小说随心看, 给用户提供最优质的阅读体验。
-联系邮箱: nosuan@163.com
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2021/04/28/TechnicalSupport/Langya_novel_technical_support/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2020/09/15/总结/OC项目集成DZMeBookRead/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2020/09/15/%E6%80%BB%E7%BB%93/OC%E9%A1%B9%E7%9B%AE%E9%9B%86%E6%88%90DZMeBookRead/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Courser's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/09/15/总结/OC项目集成DZMeBookRead/" class="post-title-link" itemprop="url">OC项目集成DZMeBookRead</a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/15/%E6%80%BB%E7%BB%93/OC%E9%A1%B9%E7%9B%AE%E9%9B%86%E6%88%90DZMeBookRead/" class="post-title-link" itemprop="url">OC项目集成DZMeBookRead</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
+              <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
-              <time title="Created: 2020-09-15 19:28:48 / Modified: 19:32:19" itemprop="dateCreated datePublished" datetime="2020-09-15T19:28:48+08:00">2020-09-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
-
-                
-                
-              
+              <time title="Created: 2020-09-15 19:28:48" itemprop="dateCreated datePublished" datetime="2020-09-15T19:28:48+08:00">2020-09-15</time>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-29 15:42:08" itemprop="dateModified" datetime="2021-12-29T15:42:08+08:00">2021-12-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -559,369 +1004,102 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="导入DZMeBookRead流程"><a href="#导入DZMeBookRead流程" class="headerlink" title="导入DZMeBookRead流程"></a>导入DZMeBookRead流程</h2><p>1.将DZMeBookRead项目中DZMeBookRead文件夹拖入OC项目</p>
+<p>2.将DZMeBookRead项目中Assets.xcassets文件内的图片拖入OC项目</p>
+<p>3.创建一个项目名称开头的桥接 “xxx-Bridging-Header.h” 例如: OCDZMeBookRead-Bridging-Header.h</p>
+<p>4.找到 Build Settings -&gt; Swift Compiler General -&gt; Objective-C Briging Header 加入桥接文件路径</p>
+<p>5.找到 Build Settings -&gt; Swift Compiler Language -&gt; 设置Swift语言版本（这里就是你使用的DZMeBookRead是Swift什么版本的）</p>
+<p>6.在info.plist中加入 View controller-based status bar appearance 设置为 NO （允许调整状态栏）</p>
+<p>7.在 “xxx-Bridging-Header.h” 中导入 “DZMeBookRead-Bridging-Pch.h”(如果存在的话) </p>
+<p>8.混编头文件 #import “OCDZMeBookRead(你的项目名称)-Swift.h” 头文件导入</p>
+<p>9.command + shift + R  运行项目测试</p>
+<p>10.注意：想要在OC中使用Swift的方法或者属性 需要在方法或者属性名前面添加 @objc</p>
+<pre><code>例如：
 
-      
-        
-          
-            <p>
-              导入DZMeBookRead流程1.将DZMeBookRead项目中DZMeBookRead文件夹拖入OC项目
-2.将DZMeBookRead项目中Assets.xcassets文件内的图片拖入OC项目
-3.创建一个项目名称开头的桥接 “xxx-Bridging-Header.h” 例如: OCDZ
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/09/15/总结/OC项目集成DZMeBookRead/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+DZMReadParser中的方法
+
+class func ParserLocalURL(url:URL,complete:((_ readModel:DZMReadModel) -&gt;Void)?)
+
+你想要在OC中进行使用 需要在最前面添加 @objc
+
+@objc class func ParserLocalURL(url:URL,complete:((_ readModel:DZMReadModel) -&gt;Void)?)
+
+再 command + shift + R
+
+可以调用了 属性也是一样
+
+例如: @objc var readModel:DZMReadModel!
+
+原本的DZMeBookRead是Swift代码 如果需要进混编且需要用到参数或者方法 需要自己进去源代码中加入 @objc 在进行使用
+
+作者已经为部分可能使用的到的方法或属性添加了 @objc ！！！
+</code></pre>
+
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2020/08/31/Runtime/runtime机制(1)-基本数据结构/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2020/08/31/Runtime/runtime%E6%9C%BA%E5%88%B6(1)-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Courser">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Courser's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/08/31/Runtime/runtime机制(1)-基本数据结构/" class="post-title-link" itemprop="url">runtime机制(1)-基本数据结构</a>
-              
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/31/Runtime/runtime%E6%9C%BA%E5%88%B6(1)-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">runtime机制(1)-基本数据结构</a>
+        </h2>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2020-08-31 20:15:14" itemprop="dateCreated datePublished" datetime="2020-08-31T20:15:14+08:00">2020-08-31</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-09-10 21:19:05" itemprop="dateModified" datetime="2020-09-10T21:19:05+08:00">2020-09-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-29 15:42:08" itemprop="dateModified" datetime="2021-12-29T15:42:08+08:00">2021-12-29</time>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Runtime/" itemprop="url" rel="index"><span itemprop="name">Runtime</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              什么是runtimeOC是动态语言, 与静态语言不同, 静态语言的各种数据结构在编译期已经决定了, 不能被修改, 而动态语言可以在程序的运行期, 动态的修改一个类的结构, 如修改方法实现、绑定实例变量等.
-
-OC作为动态语言, 会想办法将编译期做的事推迟到运行期来做, 所以, 仅有编译器是不够的, 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/08/31/Runtime/runtime机制(1)-基本数据结构/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2019/06/28/LeetCode/Reverse Integer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Courser's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/28/LeetCode/Reverse Integer/" class="post-title-link" itemprop="url">Reverse Integer</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-folder"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-28 15:13:50" itemprop="dateCreated datePublished" datetime="2019-06-28T15:13:50+08:00">2019-06-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Runtime/" itemprop="url" rel="index"><span itemprop="name">Runtime</span></a>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-31 16:22:15" itemprop="dateModified" datetime="2019-07-31T16:22:15+08:00">2019-07-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode-Swift/" itemprop="url" rel="index"><span itemprop="name">LeetCode(Swift)</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -929,996 +1107,201 @@ OC作为动态语言, 会想办法将编译期做的事推迟到运行期来做,
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="什么是runtime"><a href="#什么是runtime" class="headerlink" title="什么是runtime"></a>什么是runtime</h2><p>OC是动态语言, 与静态语言不同, 静态语言的各种数据结构在编译期已经决定了, 不能被修改, 而动态语言可以在程序的运行期, 动态的修改一个类的结构, 如修改方法实现、绑定实例变量等.</p>
+<blockquote>
+<p>OC作为动态语言, 会想办法将编译期做的事推迟到运行期来做, 所以, 仅有编译器是不够的, 还需要一个运行时系统(runtime system), 它是OC运行框架的基石.</p>
+</blockquote>
+<p>要想了解runtime，就要先了解runtime中定义的各种数据结构, 先从最基础的objc_object和objc_class开始。</p>
+<h2 id="缘起-NSObject"><a href="#缘起-NSObject" class="headerlink" title="缘起:NSObject"></a>缘起:NSObject</h2><p>OC中，基本上所有的类的基类，都是NSObject。因此要深入了解OC中的类的结构，就要从NSObject这个类说起。</p>
+<p>XCode中NSObject的实现:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@interface NSObject &lt;NSObject&gt; &#123;</span><br><span class="line">    Class isa  OBJC_ISA_AVAILABILITY;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-        
-          
-            <p>
-              Reverse Integer给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
-示例 1:
+<p>NSObject仅有一个实例变量Class isa：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/// An opaque type that represents an Objective-C class.</span><br><span class="line">typedef struct objc_class *Class;</span><br></pre></td></tr></table></figure>
 
-输入: 123输出: 321
+<p>Class实质上是指向objc_class的指针, 在runtime源码的objc-runtime-new.h中，可以看到objc_class在OC 2.0中的定义:</p>
+<h2 id="objc-clas"><a href="#objc-clas" class="headerlink" title="objc_clas"></a>objc_clas</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct objc_class : objc_object &#123;</span><br><span class="line">    // Class ISA;</span><br><span class="line">    Class superclass;</span><br><span class="line">    cache_t cache;             // formerly cache pointer and vtable</span><br><span class="line">    class_data_bits_t bits;    // class_rw_t * plus custom rr/alloc flags</span><br><span class="line"></span><br><span class="line">    class_rw_t *data() &#123; </span><br><span class="line">        return bits.data();</span><br><span class="line">    &#125;</span><br><span class="line">    void setData(class_rw_t *newData) &#123;</span><br><span class="line">        bits.setData(newData);</span><br><span class="line">    &#125;</span><br><span class="line">	。。。。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>objc_class继承自objc_object, 所以在runtime中, class也被看做一种对象, class中, 有三个数据:</p>
+<ul>
+<li>Class superclass: 同样是Class类型，表明当前类的父类。</li>
+<li>cache_t cache: cache用于优化方法调用，其对应的数据结构如是：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">struct cache_t &#123;</span><br><span class="line">    struct bucket_t *_buckets;</span><br><span class="line">    mask_t _mask;</span><br><span class="line">    mask_t _occupied;</span><br><span class="line">    </span><br><span class="line">	// 省略其余方法</span><br><span class="line">	。。。   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">typedef uintptr_t cache_key_t;</span><br><span class="line"></span><br><span class="line">struct bucket_t &#123;</span><br><span class="line">private:</span><br><span class="line">    cache_key_t _key;</span><br><span class="line">    IMP _imp;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    inline cache_key_t key() const &#123; return _key; &#125;</span><br><span class="line">    inline IMP imp() const &#123; return (IMP)_imp; &#125;</span><br><span class="line">    inline void setKey(cache_key_t newKey) &#123; _key = newKey; &#125;</span><br><span class="line">    inline void setImp(IMP newImp) &#123; _imp = newImp; &#125;</span><br><span class="line"></span><br><span class="line">    void set(cache_key_t newKey, IMP newImp);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+这里我们第一次遇到uintptr_t类型（_key） 。在runtime中，uintptr_t定义为<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#ifndef _UINTPTR_T</span><br><span class="line">#define _UINTPTR_T</span><br><span class="line">typedef unsigned long		uintptr_t;</span><br><span class="line">#endif /* _UINTPTR_T */</span><br></pre></td></tr></table></figure>
+可以理解为void *.</li>
+</ul>
+<p>cache的核心是一个类型为bucket_t的指针, 指向一个cache_key_t和IMP的缓存节点.</p>
+<p>runtime方法调用的流程: 当要调用一个方法时, 先不去Class的方法列表中查找, 而是先去找cache_t cache. </p>
+<blockquote>
+<p>理论上一个方法被调用过之后, 再次被调用的概率很大, 所以当系统调用过一个方法后, 会将其实现IMP和key存到cache中</p>
+</blockquote>
+<ul>
+<li>class_data_bits_t bits: Class的核心, 本质上是一个可以被Mask的指针, 不同的Mask, 可以取出不同的值.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">struct class_data_bits_t &#123;</span><br><span class="line"></span><br><span class="line">    // Values are the FAST_ flags above.</span><br><span class="line">    uintptr_t bits;</span><br><span class="line"> </span><br><span class="line">	public:</span><br><span class="line">    class_rw_t* data() &#123;</span><br><span class="line">        return (class_rw_t *)(bits &amp; FAST_DATA_MASK);</span><br><span class="line">    &#125;</span><br><span class="line">    void setData(class_rw_t *newData)</span><br><span class="line">    &#123;</span><br><span class="line">        assert(!data()  ||  (newData-&gt;flags &amp; (RW_REALIZING | RW_FUTURE)));</span><br><span class="line">        // Set during realization or construction only. No locking needed.</span><br><span class="line">        // Use a store-release fence because there may be concurrent</span><br><span class="line">        // readers of data and data&#x27;s contents.</span><br><span class="line">        uintptr_t newBits = (bits &amp; ~FAST_DATA_MASK) | (uintptr_t)newData;</span><br><span class="line">        atomic_thread_fence(memory_order_release);</span><br><span class="line">        bits = newBits;</span><br><span class="line">    &#125;</span><br><span class="line">    。。。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>class_data_bits_t中仅含有一个成员uintptr_t, 可以理解为”复合指针”.</p>
+<blockquote>
+<p>复合指针: 不仅包含了指针, 还包含了Class的各种异或flag来说明Class的属性, 把这些信息复合在一起, 仅用一个指针来表示</p>
+</blockquote>
+<p>当需要取出这些信息时, 需要用对应的以***FAST_***前缀开头的flag掩码对bits做按位与操作</p>
+<p>例如，我们需要取出Classs的核心信息class_rw_t, 则需要调用方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class_rw_t* data() &#123;</span><br><span class="line">        return (class_rw_t *)(bits &amp; FAST_DATA_MASK);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>该方法返回一个class_rw_t*，需要对bits进行FAST_DATA_MASK的与操作。</p>
+<p>Class的核心结构class_rw_t:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">struct class_rw_t &#123;</span><br><span class="line">    // Be warned that Symbolication knows the layout of this structure.</span><br><span class="line">    uint32_t flags;</span><br><span class="line">    uint32_t version;</span><br><span class="line"></span><br><span class="line">    const class_ro_t *ro;         // 类不可修改的原始核心</span><br><span class="line"></span><br><span class="line">    // 下面三个array，method,property, protocol，可以被runtime 扩展，如Category</span><br><span class="line">    method_array_t methods;</span><br><span class="line">    property_array_t properties;</span><br><span class="line">    protocol_array_t protocols;</span><br><span class="line"></span><br><span class="line">    // 和继承相关的东西</span><br><span class="line">    Class firstSubclass;</span><br><span class="line">    Class nextSiblingClass;</span><br><span class="line"></span><br><span class="line">    // Class对应的 符号名称</span><br><span class="line">    char *demangledName;</span><br><span class="line">	</span><br><span class="line">	// 以下方法省略</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct class_ro_t &#123;</span><br><span class="line">    uint32_t flags;</span><br><span class="line">    uint32_t instanceStart;</span><br><span class="line">    uint32_t instanceSize;</span><br><span class="line">#ifdef \__LP64\__</span><br><span class="line">    uint32_t reserved;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">    const uint8_t * ivarLayout;</span><br><span class="line">    </span><br><span class="line">    const char * name;</span><br><span class="line">    method_list_t * baseMethodList;</span><br><span class="line">    protocol_list_t * baseProtocols;</span><br><span class="line">    const ivar_list_t * ivars;</span><br><span class="line"></span><br><span class="line">    const uint8_t * weakIvarLayout;</span><br><span class="line">    property_list_t *baseProperties;</span><br><span class="line"></span><br><span class="line">    method_list_t *baseMethods() const &#123;</span><br><span class="line">        return baseMethodList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可以看到，在class_ro_t 中包含了类的名称，以及method_list_t， protocol_list_t， ivar_list_t， property_list_t 这些类的基本信息。 在class_ro_t 的信息是<em><strong>不可修改和扩展</strong></em>的。<br>在更外一层 class_rw_t 中，有三个数组method_array_t, property_array_t, protocol_array_t:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct class_rw_t &#123;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line">    const class_ro_t *ro;         // 类不可修改的原始核心</span><br><span class="line"></span><br><span class="line">    // 下面三个array，method,property, protocol，可以被runtime 扩展，如Category</span><br><span class="line">    method_array_t methods;</span><br><span class="line">    property_array_t properties;</span><br><span class="line">    protocol_array_t protocols;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这三个数组是可以被runtime动态扩展的。</p>
+<p>类抽象结构:</p>
+<blockquote>
+<p>objc_class</p>
+<blockquote>
+<p>class_data_bits_t</p>
+<blockquote>
+<p>class_rw_t(通过FAST_DATA_MASK获取)</p>
+<blockquote>
+<p>class_ro_t(类核心const信息)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="realizeClass"><a href="#realizeClass" class="headerlink" title="realizeClass"></a>realizeClass</h2><p>在objc_class的data()方法最初返回的是const class_ro_t * 类型，也就是类的基本信息。因为在调用realizeClass方法前，Category定义的各种方法，属性还没有附加到class上，因此只能够返回类的基本信息。</p>
+<p>而当我们调用realizeClass时，会在函数内部将Category中定义的各种扩展附加到class上，同时改写data()的返回值为class_rw_t *类型，核心代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const class_ro_t *ro;</span><br><span class="line">   class_rw_t *rw;</span><br><span class="line">ro = (const class_ro_t *)cls-&gt;data();</span><br><span class="line">   if (ro-&gt;flags &amp; RO_FUTURE) &#123;</span><br><span class="line">       // This was a future class. rw data is already allocated.</span><br><span class="line">       rw = cls-&gt;data();</span><br><span class="line">       ro = cls-&gt;data()-&gt;ro;</span><br><span class="line">       cls-&gt;changeInfo(RW_REALIZED|RW_REALIZING, RW_FUTURE);</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">       // Normal class. Allocate writeable class data.</span><br><span class="line">       rw = (class_rw_t *)calloc(sizeof(class_rw_t), 1);</span><br><span class="line">       rw-&gt;ro = ro;</span><br><span class="line">       rw-&gt;flags = RW_REALIZED|RW_REALIZING;</span><br><span class="line">       cls-&gt;setData(rw);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>所以在class没有调用realizeClass之前，不是真正完整的类。</p>
+<h2 id="objc-object"><a href="#objc-object" class="headerlink" title="objc_object"></a>objc_object</h2><p>OC的底层实现是runtime，在runtime这一层，对象被定义为objc_object 结构体，类被定义为了objc_class 结构体。而objc_class继承于objc_object，因此，类可以看做是一类特殊的对象。<br>objc_object定义:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct objc_object &#123;</span><br><span class="line">private:</span><br><span class="line">    isa_t isa;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line">    // ISA() assumes this is NOT a tagged pointer object</span><br><span class="line">    Class ISA();</span><br><span class="line"></span><br><span class="line">    // getIsa() allows this to be a tagged pointer object</span><br><span class="line">    Class getIsa();</span><br><span class="line"></span><br><span class="line">	// 省略其余方法</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>objc_object的定义很简单，仅包含一个isa_t 类型。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">union isa_t </span><br><span class="line">&#123;</span><br><span class="line">    isa_t() &#123; &#125;</span><br><span class="line">    isa_t(uintptr_t value) : bits(value) &#123; &#125;</span><br><span class="line"></span><br><span class="line">    Class cls;</span><br><span class="line">    uintptr_t bits;</span><br><span class="line">	</span><br><span class="line">	// 省略其余</span><br><span class="line">	。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>isa_t 是一个联合，可以表示Class cls或uintptr_t bits类型。</p>
 
-示例 2:
-
-输入: -123输出: -321
-
-示例 3:
-
-输入: 120输出: 21注意:
-
-假设我们的环境只能存储得下 32 位的有符号整数，
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/28/LeetCode/Reverse Integer/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2019/06/28/Swift Summary/Swift基本语法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Courser's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/28/Swift Summary/Swift基本语法/" class="post-title-link" itemprop="url">Swift基本语法</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-28 11:09:13 / Modified: 15:02:47" itemprop="dateCreated datePublished" datetime="2019-06-28T11:09:13+08:00">2019-06-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Swift-Summary/" itemprop="url" rel="index"><span itemprop="name">Swift Summary</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              1.变量和常量可以使用 print（swift 2 将 print 替换了 println） 函数来输出。
-在字符串中可以使用括号与反斜线来插入变量，如下实例：import Cocoavar name = "菜鸟教程"var site = "http://www.runoob.com"print("
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/28/Swift Summary/Swift基本语法/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2019/06/11/备忘录/备忘录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Courser's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/11/备忘录/备忘录/" class="post-title-link" itemprop="url">备忘录</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-11 20:55:51" itemprop="dateCreated datePublished" datetime="2019-06-11T20:55:51+08:00">2019-06-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-28 17:12:40" itemprop="dateModified" datetime="2019-06-28T17:12:40+08:00">2019-06-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/备忘录/" itemprop="url" rel="index"><span itemprop="name">备忘录</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Drops1.带有transform info的控件,千万不能再使用frame属性,此时的frame属性已经不准了,使用bounds和center进行设置!!!
-2.view的布局如果不是整数像素级,可能会导致部分被裁剪,对于小的图片来说,是肉眼可见的
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/11/备忘录/备忘录/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2019/05/14/LeetCode/Two Sum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Courser's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/14/LeetCode/Two Sum/" class="post-title-link" itemprop="url">Two Sum</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-14 20:35:17" itemprop="dateCreated datePublished" datetime="2019-05-14T20:35:17+08:00">2019-05-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-31 16:23:29" itemprop="dateModified" datetime="2019-07-31T16:23:29+08:00">2019-07-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode-Swift/" itemprop="url" rel="index"><span itemprop="name">LeetCode(Swift)</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Two Sum给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
-示例:
-
-给定 nums = [2, 7, 11, 15], target = 
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/14/LeetCode/Two Sum/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://courser123.github.io/2019/05/14/总结/使用Hexo-Github创建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Courser">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Courser's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/14/总结/使用Hexo-Github创建博客/" class="post-title-link" itemprop="url">使用Hexo + Github创建博客</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-14 15:23:33" itemprop="dateCreated datePublished" datetime="2019-05-14T15:23:33+08:00">2019-05-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-08-31 20:13:47" itemprop="dateModified" datetime="2020-08-31T20:13:47+08:00">2020-08-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
-安装安装前提
-Node.js (Should be at least nodejs 6.9)
-Git
-
-如果你的电脑中已经安装上述必备
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/14/总结/使用Hexo-Github创建博客/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Courser</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">tags</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Courser</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Courser</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Courser</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
 
 
 
@@ -1927,96 +1310,43 @@ Git
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-
-
-
-
-
-
-
+<script src="/js/next-boot.js"></script>
 
 
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
-
-
-  
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
 
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-
-  
 
   
 
